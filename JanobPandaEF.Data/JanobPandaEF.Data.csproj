@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NpgSql.EntityFrameworkcore.PostgreSQL" Version="5.0.10" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\JanobPandaEF.Domain\JanobPandaEF.Domain.csproj" />
+	</ItemGroup>	
+	
+</Project>

@@ -1,8 +1,10 @@
+using JanobPandaEF.Domain;
+using JanobPandaEF.Domain.Service;
 using Microsoft.EntityFrameworkCore;
 
-namespace JanobPandaEF
+namespace JanobPandaEF.Data.Contexts
 {
-    internal class NajotTalimDbContext : DbContext
+    public class NajotTalimDbContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<University> Universities { get; set; }

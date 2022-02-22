@@ -1,15 +1,16 @@
+using JanobPandaEF.Data.Contexts;
+using JanobPandaEF.Data.IRepositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace JanobPandaEF
+namespace JanobPandaEF.Data.Repositories
 {
 #pragma warning disable
-    internal abstract class GenericRepository<T> : IGenericRepository<T> where T : class
+    public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private NajotTalimDbContext _najotTalimDbContext;
         private DbSet<T> dbSet { get; set; }
@@ -36,9 +37,7 @@ namespace JanobPandaEF
         /// <returns></returns>
         public async Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null)
         {
-            Expression<Func<T, bool>> pred = p => true;
-
-            return dbSet.Where(predicate ?? pred);
+            return predicate == null ? dbSet : dbSet.Where(predicate);
         }
 
         /// <summary>

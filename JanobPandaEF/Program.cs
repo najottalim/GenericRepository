@@ -1,28 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Threading.Tasks;
 using static System.Console;
+using JanobPandaEF.Service.Services;
 
 namespace JanobPandaEF
 {
-    internal class Program
+    public class Program
     {
         static async Task Main(string[] args)
         {
-            IStudentRepository studentRepository = new StudentRepository();
+            var studentService = new StudentService();
 
-            var student = await studentRepository.UpdateAsync(new Student
-            {
-                Id = 1,
-                FullName = "Niyozbek Mirzayev2",
-                GroupId = 1,
-                UniversityId = 2
-            });
+            var student = await studentService.GetAsync(p => p.UniversityId == 2);
 
             WriteLine(student.FullName);
-
         }
     }
 }

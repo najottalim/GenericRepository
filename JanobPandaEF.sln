@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JanobPandaEF", "JanobPandaEF\JanobPandaEF.csproj", "{7FFECBB2-8BE4-498B-8F1D-7D1450C890DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JanobPandaEF", "JanobPandaEF\JanobPandaEF.csproj", "{7FFECBB2-8BE4-498B-8F1D-7D1450C890DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JanobPandaEF.Domain", "JanobPandaEF.Domain\JanobPandaEF.Domain.csproj", "{A725DCE3-C579-4640-8A7F-EC6E88203B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JanobPandaEF.Data", "JanobPandaEF.Data\JanobPandaEF.Data.csproj", "{EF97B271-DBCB-4C39-8C70-D6CF7DD95254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JanobPandaEF.Service", "JanobPandaEF.Service\JanobPandaEF.Service.csproj", "{70C2D3D2-9505-426D-BDA8-C15D57C3957B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{7FFECBB2-8BE4-498B-8F1D-7D1450C890DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FFECBB2-8BE4-498B-8F1D-7D1450C890DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FFECBB2-8BE4-498B-8F1D-7D1450C890DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A725DCE3-C579-4640-8A7F-EC6E88203B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A725DCE3-C579-4640-8A7F-EC6E88203B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A725DCE3-C579-4640-8A7F-EC6E88203B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A725DCE3-C579-4640-8A7F-EC6E88203B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF97B271-DBCB-4C39-8C70-D6CF7DD95254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF97B271-DBCB-4C39-8C70-D6CF7DD95254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF97B271-DBCB-4C39-8C70-D6CF7DD95254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF97B271-DBCB-4C39-8C70-D6CF7DD95254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70C2D3D2-9505-426D-BDA8-C15D57C3957B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C2D3D2-9505-426D-BDA8-C15D57C3957B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C2D3D2-9505-426D-BDA8-C15D57C3957B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C2D3D2-9505-426D-BDA8-C15D57C3957B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

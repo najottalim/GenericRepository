@@ -1,10 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace JanobPandaEF
+namespace JanobPandaEF.Domain
 {
     [Table("subjects")]
-    internal class Subject
+    public class Subject
     {
         [Key, Column("id")]
         public int Id { get; set; }
