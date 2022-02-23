@@ -1,14 +1,10 @@
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JanobPandaEF.Domain
 {
     [Table("universities")]
-    public class University
+    public class University : BaseModel
     {
-        [Key, Column("id")]
-        public int Id { get; set; }
-
         [Column("name")]
         public string Name { get; set; }
 

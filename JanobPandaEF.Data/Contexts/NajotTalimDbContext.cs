@@ -7,9 +7,9 @@ namespace JanobPandaEF.Data.Contexts
     public class NajotTalimDbContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
-        public DbSet<University> Universities { get; set; }
-        public DbSet<Group> Groups { get; set; }
-        public DbSet<Subject> Subjects { get; set; }
+        //public DbSet<University> Universities { get; set; }
+        //public DbSet<Group> Groups { get; set; }
+        //public DbSet<Subject> Subjects { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

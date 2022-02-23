@@ -25,9 +25,9 @@ namespace JanobPandaEF.Data.Repositories
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        public async Task<T> GetAsync(Expression<Func<T, bool>> predicate)
+        public Task<T> GetAsync(Expression<Func<T, bool>> predicate)
         {
-            return await dbSet.FirstOrDefaultAsync(predicate);
+            return dbSet.FirstOrDefaultAsync(predicate);
         }
 
         /// <summary>
