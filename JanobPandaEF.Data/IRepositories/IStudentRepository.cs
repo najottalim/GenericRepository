@@ -6,6 +6,6 @@ namespace JanobPandaEF.Data.IRepositories
 {
     public interface IStudentRepository : IGenericRepository<Student>
     {
-        Task<StudentData> GetDataOfStudent(long studentId);
+        Task<StudentData> GetDataOfStudent(int studentId);
     }
 }

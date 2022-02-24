@@ -8,13 +8,13 @@ namespace JanobPandaEF.Data.Contexts
 {
     public class NajotTalimDbContext : DbContext
     {
-        public DbSet<Student> Students { get; set; }
-        public DbSet<University> Universities { get; set; }
-        public DbSet<Group> Groups { get; set; }
-        public DbSet<Subject> Subjects { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<University> Universities { get; set; }
+        public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<Subject> Subjects { get; set; }
 
         // ViewModels
-        public DbSet<StudentData> StudentDatas { get; set; }
+        public virtual DbSet<StudentData> StudentDatas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -51,7 +51,8 @@ namespace JanobPandaEF.Data.Contexts
             });
             #endregion
 
-            //modelBuilder.Ignore<StudentData>();
+            modelBuilder.Entity<StudentData>().ToFunction("get_data_of_student");
+            modelBuilder.Entity<StudentData>().ToTable(nameof(StudentData), p => p.ExcludeFromMigrations(true));
         }
 
     }

@@ -3,10 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JanobPandaEF.Domain
 {
-    [Table("subjects")]
     public class Subject : BaseModel
     {
-        [Column("name"), Required]
+        [Required]
         public string Name { get; set; }
     }
 }

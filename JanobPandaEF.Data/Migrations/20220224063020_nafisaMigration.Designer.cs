@@ -2,15 +2,17 @@
 using JanobPandaEF.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace JanobPandaEF.Data.Migrations
 {
     [DbContext(typeof(NajotTalimDbContext))]
-    partial class NajotTalimDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220224063020_nafisaMigration")]
+    partial class nafisaMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -170,35 +172,6 @@ namespace JanobPandaEF.Data.Migrations
                             Level = 2,
                             Name = "WIUT"
                         });
-                });
-
-            modelBuilder.Entity("JanobPandaEF.Domain.ViewModels.StudentData", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("FullName")
-                        .HasColumnType("text")
-                        .HasColumnName("fullname");
-
-                    b.Property<string>("GroupName")
-                        .HasColumnType("text")
-                        .HasColumnName("group_name");
-
-                    b.Property<string>("SubjectName")
-                        .HasColumnType("text")
-                        .HasColumnName("subject_name");
-
-                    b.Property<string>("UniversityName")
-                        .HasColumnType("text")
-                        .HasColumnName("university_name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("StudentData", t => t.ExcludeFromMigrations());
                 });
 
             modelBuilder.Entity("JanobPandaEF.Domain.Group", b =>
