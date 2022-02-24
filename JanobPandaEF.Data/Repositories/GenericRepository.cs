@@ -12,8 +12,8 @@ namespace JanobPandaEF.Data.Repositories
 #pragma warning disable
     public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private NajotTalimDbContext _najotTalimDbContext;
-        private DbSet<T> dbSet { get; set; }
+        protected NajotTalimDbContext _najotTalimDbContext;
+        internal DbSet<T> dbSet { get; set; }
         public GenericRepository()
         {
             _najotTalimDbContext = new NajotTalimDbContext();

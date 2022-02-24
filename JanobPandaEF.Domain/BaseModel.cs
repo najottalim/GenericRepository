@@ -10,7 +10,7 @@ namespace JanobPandaEF.Domain
 {
     public class BaseModel
     {
-        [Key, Column("id")]
+        [Key]
         public int Id { get; set; }
     }
 }

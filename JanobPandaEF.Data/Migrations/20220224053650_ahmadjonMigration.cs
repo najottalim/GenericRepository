@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace JanobPandaEF.Data.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class ahmadjonMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -80,6 +80,44 @@ namespace JanobPandaEF.Data.Migrations
                         principalTable: "universities",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "subjects",
+                columns: new[] { "id", "name" },
+                values: new object[,]
+                {
+                    { 1, ".NET" },
+                    { 2, "Java" },
+                    { 3, "Go" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "universities",
+                columns: new[] { "id", "address", "level", "name" },
+                values: new object[,]
+                {
+                    { 1, "Tashkent", 1, "TUIT" },
+                    { 2, "Tashkent", 2, "WIUT" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "groups",
+                columns: new[] { "id", "name", "subject_id" },
+                values: new object[,]
+                {
+                    { 1, "dotNET #1", 1 },
+                    { 2, "Java #1", 2 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "students",
+                columns: new[] { "id", "fullname", "group_id", "university_id" },
+                values: new object[,]
+                {
+                    { 1, "Ahmadjon Sirojiddinov", 1, 2 },
+                    { 3, "Abbos Haydarov", 1, 1 },
+                    { 2, "Muhammadabdulloh Komilov", 2, 1 }
                 });
 
             migrationBuilder.CreateIndex(

@@ -2,6 +2,9 @@
 using static System.Console;
 using JanobPandaEF.Service.Services;
 using Newtonsoft.Json;
+using JanobPandaEF.Service.Interfaces;
+using JanobPandaEF.Data.IRepositories;
+using JanobPandaEF.Data.Repositories;
 
 namespace JanobPandaEF
 {
@@ -9,17 +12,10 @@ namespace JanobPandaEF
     {
         static async Task Main(string[] args)
         {
-            var studentService = new StudentService();
+            IStudentRepository studentService = new StudentRepository();
+            var student = await studentService.GetDataOfStudent(1);
 
-            var students = await studentService.GetAllInfoAsync(2, 1);
-
-            //foreach (var student in students)
-            //{
-            //    WriteLine(student.FullName + "\t" + student.University.Name + "\t" + student.Group.Name + "\t" + student.Group.Subject.Name);
-            //}
-
-            string json = JsonConvert.SerializeObject(students);
-            System.Console.WriteLine(json);
+            WriteLine(student.Id + " - " + student.FullName);
         }
     }
 }

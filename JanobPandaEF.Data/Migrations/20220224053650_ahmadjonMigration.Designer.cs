@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace JanobPandaEF.Data.Migrations
 {
     [DbContext(typeof(NajotTalimDbContext))]
-    [Migration("20220223061128_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20220224053650_ahmadjonMigration")]
+    partial class ahmadjonMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,6 +42,20 @@ namespace JanobPandaEF.Data.Migrations
                     b.HasIndex("SubjectId");
 
                     b.ToTable("groups");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "dotNET #1",
+                            SubjectId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Java #1",
+                            SubjectId = 2
+                        });
                 });
 
             modelBuilder.Entity("JanobPandaEF.Domain.Student", b =>
@@ -72,6 +86,29 @@ namespace JanobPandaEF.Data.Migrations
                     b.HasIndex("UniversityId");
 
                     b.ToTable("students");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FullName = "Ahmadjon Sirojiddinov",
+                            GroupId = 1,
+                            UniversityId = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FullName = "Muhammadabdulloh Komilov",
+                            GroupId = 2,
+                            UniversityId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FullName = "Abbos Haydarov",
+                            GroupId = 1,
+                            UniversityId = 1
+                        });
                 });
 
             modelBuilder.Entity("JanobPandaEF.Domain.Subject", b =>
@@ -90,6 +127,23 @@ namespace JanobPandaEF.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("subjects");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = ".NET"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Java"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Go"
+                        });
                 });
 
             modelBuilder.Entity("JanobPandaEF.Domain.University", b =>
@@ -115,6 +169,22 @@ namespace JanobPandaEF.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("universities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "Tashkent",
+                            Level = 1,
+                            Name = "TUIT"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "Tashkent",
+                            Level = 2,
+                            Name = "WIUT"
+                        });
                 });
 
             modelBuilder.Entity("JanobPandaEF.Domain.Group", b =>
